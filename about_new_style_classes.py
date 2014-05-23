@@ -46,19 +46,19 @@ class AboutNewStyleClasses(Koan):
 
     def test_new_style_classes_have_same_class_as_type(self):
         new_style = self.NewStyleClass()
-        self.assertEqual(__, self.NewStyleClass.__class__)
+        self.assertEqual(type(self.NewStyleClass), self.NewStyleClass.__class__)
         self.assertEqual(
-            __,
+            True,
             type(self.NewStyleClass) == self.NewStyleClass.__class__)
 
     # ------------------------------------------------------------------
 
     def test_in_old_style_instances_class_is_different_to_type(self):
         old_style = self.OldStyleClass()
-        self.assertEqual(__, old_style.__class__.__name__)
-        self.assertEqual(__, type(old_style).__name__)
+        self.assertEqual('OldStyleClass', old_style.__class__.__name__)
+        self.assertEqual('instance', type(old_style).__name__)
 
     def test_new_style_instances_have_same_class_as_type(self):
         new_style = self.NewStyleClass()
-        self.assertEqual(__, new_style.__class__.__name__)
-        self.assertEqual(__, type(new_style) == new_style.__class__)
+        self.assertEqual('NewStyleClass', new_style.__class__.__name__)
+        self.assertEqual(True, type(new_style) == new_style.__class__)
