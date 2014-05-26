@@ -20,8 +20,8 @@ class AboutDecoratingWithClasses(Koan):
         """
         max = functools.partial(self.maximum)
 
-        self.assertEqual(__, max(7, 23))
-        self.assertEqual(__, max(10, -10))
+        self.assertEqual(23, max(7, 23))
+        self.assertEqual(10, max(10, -10))
 
     def test_partial_that_wrappers_first_arg(self):
         max0 = functools.partial(self.maximum, 0)
