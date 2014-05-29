@@ -88,7 +88,7 @@ class AboutMultipleInheritance(Koan):
 
     def test_normal_methods_are_available_in_the_object(self):
         jeff = self.Spiderpig()
-        self.assertMatch(__, jeff.speak())
+        self.assertMatch("This looks like a job for Spiderpig!" , jeff.speak())
 
     def test_base_class_methods_are_also_available_in_the_object(self):
         jeff = self.Spiderpig()
@@ -96,18 +96,18 @@ class AboutMultipleInheritance(Koan):
             jeff.set_name("Rover")
         except:
             self.fail("This should not happen")
-        self.assertEqual(____, jeff.can_climb_walls())
+        self.assertEqual(True, jeff.can_climb_walls())
 
     def test_base_class_methods_can_affect_instance_variables_in_the_object(self):
         jeff = self.Spiderpig()
-        self.assertEqual(__, jeff.name)
+        self.assertEqual("Jeff", jeff.name)
 
         jeff.set_name("Rover")
-        self.assertEqual(__, jeff.name)
+        self.assertEqual("Rover", jeff.name)
 
     def test_left_hand_side_inheritance_tends_to_be_higher_priority(self):
         jeff = self.Spiderpig()
-        self.assertEqual(__, jeff.color())
+        self.assertEqual("pink", jeff.color())
 
     def test_super_class_methods_are_higher_priority_than_super_super_classes(self):
         jeff = self.Spiderpig()
