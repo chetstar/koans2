@@ -5,7 +5,6 @@
 class Duck(object):
     def __init__(self):
         self._password = 'password'  # Genius!
-
     @property
     def name(self):
         return "Daffy"
